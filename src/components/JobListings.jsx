@@ -1,6 +1,7 @@
 import  {useState, useEffect} from 'react';
 import JobListing from './JobListing'
 import Spinner from './Spinner'
+import { mockJobs } from '../data/mockJobs';
 
 
 const JobListings = ({isHome = false}) => {
@@ -11,6 +12,11 @@ const JobListings = ({isHome = false}) => {
     const fetchJobs = async () => {
        try{ 
         const res = await fetch('/api/jobs');
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
         const data = await res.json();
         console.log('API Response:', data); // Debug log
         
@@ -19,13 +25,14 @@ const JobListings = ({isHome = false}) => {
           setJobs(data);
         } else {
           console.error('API did not return an array:', data);
-          setJobs([]);
+          setJobs(mockJobs); // Use mock data if API doesn't return array
         }
     
     }catch(error)
     {
         console.log("Error fetching jobs:", error);
-        setJobs([]); // Set empty array on error
+        console.log("Using mock data instead");
+        setJobs(mockJobs); // Use mock data on error
     }finally{
         setloading(false);
     }

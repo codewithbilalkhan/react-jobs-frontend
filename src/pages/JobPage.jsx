@@ -6,6 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import {FaMapMarker} from 'react-icons/fa'
 import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from '../contexts/AuthContext';
+import { mockJobs } from '../data/mockJobs';
 
 
 const JobPage = ({deletejob}) => {
@@ -31,13 +32,24 @@ const JobPage = ({deletejob}) => {
     const fetchJobs = async () => {
        try{ 
         const res = await fetch(`/api/jobs/${id}`);
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
         const data = await res.json();
         console.log(data);
         setJob(data);
     
     }catch(error)
     {
-        console.log("Error fetching jobs:", error);
+        console.log("Error fetching job:", error);
+        console.log("Using mock data instead");
+        // Find job in mock data as fallback
+        const mockJob = mockJobs.find(j => j.id === id);
+        if (mockJob) {
+          setJob(mockJob);
+        }
     }finally{
         setloading(false);
     }
