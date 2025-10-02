@@ -3,10 +3,12 @@ import {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
+import { useJobs } from '../contexts/JobsContext';
 
-const EditJobPage = ({updateJobSubmit}) => {
+const EditJobPage = () => {
     const {id} = useParams();
     const navigate = useNavigate();
+    const { getJobById, updateJob, loading } = useJobs();
     
     const[title, setTitle] =useState('');
     const[type, setType] =useState('Full-Time');
@@ -17,36 +19,24 @@ const EditJobPage = ({updateJobSubmit}) => {
     const[company_description, setCompanyDescription] =useState('');
     const[contact_email, setContactEmail] =useState('');
     const[contact_phone, setContactPhone] =useState('');   
-    const[loading, setLoading] = useState(true);
     
     useEffect(() => {
-        const fetchJob = async () => {
-            try {
-                const res = await fetch(`/api/jobs/${id}`);
-                const jobData = await res.json();
-                
-                // Pre-populate form with existing job data
-                setTitle(jobData.title);
-                setType(jobData.type);
-                setDescription(jobData.description);
-                setSalary(jobData.salary);
-                setLocation(jobData.location);
-                setCompany(jobData.company.name);
-                setCompanyDescription(jobData.company.description);
-                setContactEmail(jobData.company.contactEmail);
-                setContactPhone(jobData.company.contactPhone);
-            } catch (error) {
-                console.error('Error fetching job:', error);
-                toast.error('Failed to load job data');
-            } finally {
-                setLoading(false);
-            }
-        };
-        
-        fetchJob();
-    }, [id]);
+        const jobData = getJobById(id);
+        if (jobData) {
+            // Pre-populate form with existing job data
+            setTitle(jobData.title);
+            setType(jobData.type);
+            setDescription(jobData.description);
+            setSalary(jobData.salary);
+            setLocation(jobData.location);
+            setCompany(jobData.company.name);
+            setCompanyDescription(jobData.company.description);
+            setContactEmail(jobData.company.contactEmail);
+            setContactPhone(jobData.company.contactPhone);
+        }
+    }, [id, getJobById]);
     
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
         const updatedJob = {
             title,
@@ -62,7 +52,13 @@ const EditJobPage = ({updateJobSubmit}) => {
             }
         };
         
-        updateJobSubmit(id, updatedJob);
+        try {
+            await updateJob(id, updatedJob);
+            toast.success('Job updated successfully!');
+            navigate(`/jobs/${id}`);
+        } catch (error) {
+            toast.error('Failed to update job. Please try again.');
+        }
         toast.success('Job updated successfully!');
         navigate(`/jobs/${id}`);
     };

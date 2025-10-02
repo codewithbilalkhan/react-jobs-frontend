@@ -1,47 +1,11 @@
-import  {useState, useEffect} from 'react';
+import React from 'react';
 import JobListing from './JobListing'
 import Spinner from './Spinner'
-import { mockJobs } from '../data/mockJobs';
+import { useJobs } from '../contexts/JobsContext';
 
 
 const JobListings = ({isHome = false}) => {
-  const[jobs, setJobs] = useState([]);
-  const [loading, setloading] = useState(true);
-
- useEffect(() =>{
-    const fetchJobs = async () => {
-       try{ 
-        const res = await fetch('/api/jobs');
-        
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        
-        const data = await res.json();
-        console.log('API Response:', data); // Debug log
-        
-        // Ensure we have an array
-        if (Array.isArray(data)) {
-          setJobs(data);
-        } else {
-          console.error('API did not return an array:', data);
-          setJobs(mockJobs); // Use mock data if API doesn't return array
-        }
-    
-    }catch(error)
-    {
-        console.log("Error fetching jobs:", error);
-        console.log("Using mock data instead");
-        setJobs(mockJobs); // Use mock data on error
-    }finally{
-        setloading(false);
-    }
-       
-    }
-    fetchJobs();
- }, []);
-
-    
+  const { jobs, loading } = useJobs();
 
   return (
       <section className="bg-blue-50 px-4 py-10">

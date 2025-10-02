@@ -6,59 +6,37 @@ import { FaArrowLeft } from 'react-icons/fa';
 import {FaMapMarker} from 'react-icons/fa'
 import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from '../contexts/AuthContext';
-import { mockJobs } from '../data/mockJobs';
+import { useJobs } from '../contexts/JobsContext';
 
 
-const JobPage = ({deletejob}) => {
+const JobPage = () => {
     const { user } = useAuth();
+    const { getJobById, deleteJob, loading } = useJobs();
     const navigate = useNavigate();
+    const { id } = useParams();
+    const [job, setJob] = useState(null);
+    
+    useEffect(() => {
+        const jobData = getJobById(id);
+        setJob(jobData);
+    }, [id, getJobById]);
+    
     const OnDeleteClick = async (jobID) => {
         const isConfirmed = window.confirm("Are you sure you want to delete this job?");
         if(!isConfirmed)
         return; 
         
         try {
-            await deletejob(jobID);
+            await deleteJob(jobID);
             toast.success("Job deleted successfully!");
             navigate('/jobs');
         } catch (error) {
             toast.error("Failed to delete job. Please try again.");
         }
     }
-   const {id} = useParams();
-   const[job, setJob] = useState(null);
-   const [loading, setloading] = useState(true)
-    useEffect(() =>{
-    const fetchJobs = async () => {
-       try{ 
-        const res = await fetch(`/api/jobs/${id}`);
-        
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        
-        const data = await res.json();
-        console.log(data);
-        setJob(data);
-    
-    }catch(error)
-    {
-        console.log("Error fetching job:", error);
-        console.log("Using mock data instead");
-        // Find job in mock data as fallback
-        const mockJob = mockJobs.find(j => j.id === id);
-        if (mockJob) {
-          setJob(mockJob);
-        }
-    }finally{
-        setloading(false);
-    }
-    }
-    fetchJobs();
- }, [id]);
 
 
-return loading ? <Spinner loading={loading}/> : (
+return (loading && !job) ? <Spinner loading={loading}/> : (
   job ? <>
 
     <section>

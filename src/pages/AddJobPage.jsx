@@ -2,9 +2,10 @@ import React from 'react'
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useJobs } from '../contexts/JobsContext';
 
 
-const AddJobPage = ({addJobSubmit}) => {
+const AddJobPage = () => {
     const[title, setTitle] =useState('');
     const[type, setType] =useState('Full-Time');
     const[description, setDescription] =useState('');
@@ -16,6 +17,7 @@ const AddJobPage = ({addJobSubmit}) => {
     const[contact_phone, setContactPhone] =useState('');   
     
     const Navigate = useNavigate();
+    const { addJob } = useJobs();
     
     const submitForm = async (e) => {
         e.preventDefault();
@@ -34,7 +36,7 @@ const AddJobPage = ({addJobSubmit}) => {
         };
         
         try {
-            await addJobSubmit(newJob);
+            await addJob(newJob);
             toast.success('Job added successfully!');
             Navigate('/jobs');
         } catch (error) {
