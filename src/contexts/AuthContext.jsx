@@ -14,10 +14,10 @@ const mockUsers = [
   },
   {
     id: 2,
-    name: 'Jane Developer',
-    email: 'developer@example.com',
+    name: 'Jane JobSeeker',
+    email: 'jobseeker@example.com',
     password: 'password123',
-    role: 'developer'
+    role: 'jobseeker'
   }
 ];
 
@@ -192,8 +192,8 @@ export const AuthProvider = ({ children }) => {
     return user?.role === 'employer';
   };
 
-  const isDeveloper = () => {
-    return user?.role === 'developer';
+  const isJobSeeker = () => {
+    return user?.role === 'jobseeker';
   };
 
   const value = {
@@ -204,7 +204,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     getAuthToken,
     isEmployer,
-    isDeveloper,
+    isJobSeeker,
     isAuthenticated: !!user
   };
 

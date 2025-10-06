@@ -8,7 +8,7 @@ const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('developer');
+  const [role, setRole] = useState('jobseeker');
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const SignupPage = () => {
   };
 
   return (
-    <section className="bg-indigo-50 min-h-screen flex items-center justify-center">
+    <section className="bg-orange-50 min-h-screen flex items-center justify-center">
       <div className="container mx-auto max-w-md">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border">
           <form onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ const SignupPage = () => {
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
               >
-                <option value="developer">Developer (Looking for jobs)</option>
+                <option value="jobseeker">Job Seeker (Looking for jobs)</option>
                 <option value="employer">Employer (Posting jobs)</option>
               </select>
             </div>
@@ -132,7 +132,7 @@ const SignupPage = () => {
 
             <div className="mb-6">
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline disabled:opacity-50"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline disabled:opacity-50"
                 type="submit"
                 disabled={loading}
               >
@@ -143,7 +143,7 @@ const SignupPage = () => {
             <div className="text-center">
               <p className="text-gray-600">
                 Already have an account?{' '}
-                <Link to="/login" className="text-indigo-500 hover:text-indigo-600">
+                <Link to="/login" className="text-orange-500 hover:text-orange-600">
                   Login here
                 </Link>
               </p>

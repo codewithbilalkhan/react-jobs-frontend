@@ -1,86 +1,142 @@
 export const mockJobs = [
   {
     "id": "1",
-    "title": "Senior React Developer",
+    "title": "Digital Marketing Manager",
     "type": "Full-Time",
-    "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. Work with React, TypeScript, and modern tools to build amazing user experiences.",
-    "location": "Boston, MA",
-    "salary": "$70K - $80K",
+    "description": "Lead our digital marketing initiatives including social media campaigns, email marketing, and SEO strategies. Experience with Google Analytics, Facebook Ads, and content creation required. Join a dynamic team focused on driving growth through innovative marketing approaches.",
+    "location": "Chicago, IL",
+    "salary": "$55K - $70K",
     "company": {
-      "name": "NewTek Solutions",
-      "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions.",
-      "contactEmail": "contact@teksolutions.com",
-      "contactPhone": "555-555-5555"
+      "name": "BrandBoost Marketing",
+      "description": "BrandBoost Marketing is a full-service digital agency helping businesses grow their online presence and reach target audiences effectively.",
+      "contactEmail": "careers@brandboost.com",
+      "contactPhone": "555-123-4567"
     }
   },
   {
     "id": "2",
-    "title": "Frontend Developer",
+    "title": "Data Analyst",
     "type": "Part-Time",
-    "description": "Join our team as a Frontend Developer. Experience with React and modern JavaScript required. Flexible hours and remote work available.",
-    "location": "Miami, FL",
-    "salary": "$60K - $70K",
+    "description": "Analyze complex datasets to provide actionable insights for business decisions. Proficiency in SQL, Python, and data visualization tools like Tableau required. Flexible schedule with opportunity for remote work and professional development.",
+    "location": "Seattle, WA",
+    "salary": "$45K - $60K",
     "company": {
-      "name": "WebDev Corp",
-      "description": "WebDev Corp creates innovative web solutions for businesses worldwide. We focus on cutting-edge technologies.",
-      "contactEmail": "jobs@webdevcorp.com",
-      "contactPhone": "555-555-5556"
+      "name": "DataInsights Corp",
+      "description": "DataInsights Corp specializes in turning raw data into meaningful business intelligence for companies across various industries.",
+      "contactEmail": "jobs@datainsights.com",
+      "contactPhone": "555-234-5678"
     }
   },
   {
     "id": "3",
-    "title": "Full Stack Developer",
+    "title": "Project Manager",
     "type": "Full-Time",
-    "description": "Looking for a Full Stack Developer with experience in React, Node.js, and databases. Join our growing team of passionate developers.",
-    "location": "New York, NY",
-    "salary": "$80K - $90K",
+    "description": "Coordinate cross-functional teams to deliver projects on time and within budget. Strong organizational skills and experience with Agile methodologies required. Lead initiative planning, resource allocation, and stakeholder communication.",
+    "location": "Denver, CO",
+    "salary": "$65K - $80K",
     "company": {
-      "name": "Tech Innovators",
-      "description": "Tech Innovators is at the forefront of technological advancement and digital transformation.",
-      "contactEmail": "careers@techinnovators.com",
-      "contactPhone": "555-555-5557"
+      "name": "ProManage Solutions",
+      "description": "ProManage Solutions provides project management consulting and solutions to help organizations streamline their operations and achieve strategic goals.",
+      "contactEmail": "careers@promanage.com",
+      "contactPhone": "555-345-6789"
     }
   },
   {
     "id": "4",
-    "title": "React Native Developer",
-    "type": "Full-Time",
-    "description": "Develop mobile applications using React Native. Experience with iOS and Android development preferred.",
-    "location": "San Francisco, CA",
-    "salary": "$85K - $95K",
+    "title": "Graphic Designer",
+    "type": "Contract",
+    "description": "Create visually compelling designs for print and digital media. Expertise in Adobe Creative Suite, brand development, and layout design essential. Work on diverse projects from logos to marketing materials.",
+    "location": "Los Angeles, CA",
+    "salary": "$40K - $55K",
     "company": {
-      "name": "Mobile First Solutions",
-      "description": "We specialize in mobile-first applications and cross-platform development.",
-      "contactEmail": "hello@mobilefirst.com",
-      "contactPhone": "555-555-5558"
+      "name": "Creative Minds Studio",
+      "description": "Creative Minds Studio is a boutique design agency known for innovative visual solutions and award-winning creative campaigns.",
+      "contactEmail": "hello@creativeminds.com",
+      "contactPhone": "555-456-7890"
     }
   },
   {
     "id": "5",
-    "title": "UI/UX Developer",
-    "type": "Contract",
-    "description": "Create beautiful and intuitive user interfaces. Strong design skills and React experience required.",
-    "location": "Remote",
-    "salary": "$65K - $75K",
+    "title": "Sales Representative",
+    "type": "Full-Time",
+    "description": "Drive revenue growth by building relationships with new and existing clients. Strong communication skills and sales experience preferred. Competitive commission structure with opportunities for advancement and territory expansion.",
+    "location": "Phoenix, AZ",
+    "salary": "$50K - $75K",
     "company": {
-      "name": "Design Studio Pro",
-      "description": "Award-winning design studio creating digital experiences that users love.",
-      "contactEmail": "work@designstudio.com",
-      "contactPhone": "555-555-5559"
+      "name": "SalesForce Solutions",
+      "description": "SalesForce Solutions provides B2B sales consulting and CRM implementation services to help businesses optimize their sales processes.",
+      "contactEmail": "careers@salesforce-sol.com",
+      "contactPhone": "555-567-8901"
     }
   },
   {
     "id": "6",
-    "title": "JavaScript Developer",
+    "title": "Human Resources Specialist",
     "type": "Full-Time",
-    "description": "Work with modern JavaScript frameworks and tools. Experience with React, Vue, or Angular required.",
-    "location": "Austin, TX",
-    "salary": "$70K - $85K",
+    "description": "Support employee lifecycle from recruitment to offboarding. Handle benefits administration, policy development, and employee relations. HR certification and experience with HRIS systems preferred.",
+    "location": "Atlanta, GA",
+    "salary": "$48K - $62K",
     "company": {
-      "name": "Code Masters Inc",
-      "description": "We build scalable web applications for enterprise clients using the latest technologies.",
-      "contactEmail": "careers@codemasters.com",
-      "contactPhone": "555-555-5560"
+      "name": "TalentHub HR Services",
+      "description": "TalentHub HR Services offers comprehensive human resources solutions including recruitment, training, and compliance management for growing businesses.",
+      "contactEmail": "hr@talenthub.com",
+      "contactPhone": "555-678-9012"
+    }
+  },
+  {
+    "id": "7",
+    "title": "Content Writer",
+    "type": "Remote",
+    "description": "Create engaging content for websites, blogs, and social media platforms. Strong writing skills and SEO knowledge required. Experience with content management systems and ability to research diverse topics independently.",
+    "location": "Remote",
+    "salary": "$35K - $50K",
+    "company": {
+      "name": "WordCraft Media",
+      "description": "WordCraft Media is a content marketing agency specializing in storytelling and brand voice development for digital platforms.",
+      "contactEmail": "writers@wordcraft.com",
+      "contactPhone": "555-789-0123"
+    }
+  },
+  {
+    "id": "8",
+    "title": "Customer Service Manager",
+    "type": "Full-Time",
+    "description": "Lead customer service team to ensure exceptional client experiences. Develop training programs, monitor performance metrics, and implement process improvements. Experience in call center operations and team leadership required.",
+    "location": "Orlando, FL",
+    "salary": "$52K - $68K",
+    "company": {
+      "name": "ServiceFirst Inc",
+      "description": "ServiceFirst Inc provides customer support solutions and call center services to businesses looking to enhance their customer experience.",
+      "contactEmail": "careers@servicefirst.com",
+      "contactPhone": "555-890-1234"
+    }
+  },
+  {
+    "id": "9",
+    "title": "Financial Analyst",
+    "type": "Full-Time",
+    "description": "Perform financial modeling, budgeting, and forecasting to support business decisions. Strong analytical skills and proficiency in Excel required. CPA or finance degree preferred with opportunity for professional growth.",
+    "location": "Dallas, TX",
+    "salary": "$58K - $75K",
+    "company": {
+      "name": "FinanceWise Consulting",
+      "description": "FinanceWise Consulting provides financial planning and analysis services to help businesses make informed strategic and operational decisions.",
+      "contactEmail": "jobs@financewise.com",
+      "contactPhone": "555-901-2345"
+    }
+  },
+  {
+    "id": "10",
+    "title": "Operations Coordinator",
+    "type": "Part-Time",
+    "description": "Coordinate daily operations and ensure smooth workflow across departments. Strong organizational skills and attention to detail required. Support inventory management, scheduling, and process optimization initiatives.",
+    "location": "Portland, OR",
+    "salary": "$42K - $55K",
+    "company": {
+      "name": "OptiFlow Systems",
+      "description": "OptiFlow Systems specializes in operational efficiency consulting and workflow optimization for manufacturing and service industries.",
+      "contactEmail": "careers@optiflow.com",
+      "contactPhone": "555-012-3456"
     }
   }
 ];

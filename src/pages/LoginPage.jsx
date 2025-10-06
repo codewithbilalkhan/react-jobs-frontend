@@ -28,7 +28,7 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="bg-indigo-50 min-h-screen flex items-center justify-center">
+    <section className="bg-orange-50 min-h-screen flex items-center justify-center">
       <div className="container mx-auto max-w-md">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border">
           <form onSubmit={handleSubmit}>
@@ -68,7 +68,7 @@ const LoginPage = () => {
 
             <div className="mb-6">
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline disabled:opacity-50"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline disabled:opacity-50"
                 type="submit"
                 disabled={loading}
               >
@@ -79,7 +79,7 @@ const LoginPage = () => {
             <div className="text-center">
               <p className="text-gray-600">
                 Don't have an account?{' '}
-                <Link to="/signup" className="text-indigo-500 hover:text-indigo-600">
+                <Link to="/signup" className="text-orange-500 hover:text-orange-600">
                   Sign up here
                 </Link>
               </p>

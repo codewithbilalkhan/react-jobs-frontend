@@ -23,7 +23,7 @@ export const JobsProvider = ({ children }) => {
   const loadJobs = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/jobs');
+      const res = await fetch('http://localhost:8000/jobs');
       
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
@@ -49,7 +49,7 @@ export const JobsProvider = ({ children }) => {
 
   const addJob = async (newJob) => {
     try {
-      const res = await fetch('/api/jobs', {
+      const res = await fetch('http://localhost:8000/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export const JobsProvider = ({ children }) => {
 
   const updateJob = async (id, updatedJob) => {
     try {
-      const res = await fetch(`/api/jobs/${id}`, {
+      const res = await fetch(`http://localhost:8000/jobs/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export const JobsProvider = ({ children }) => {
 
   const deleteJob = async (id) => {
     try {
-      const res = await fetch(`/api/jobs/${id}`, {
+      const res = await fetch(`http://localhost:8000/jobs/${id}`, {
         method: 'DELETE',
         headers: {
           ...(localStorage.getItem('authToken') && { 

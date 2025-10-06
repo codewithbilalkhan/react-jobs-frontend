@@ -9,7 +9,7 @@ const EmployerDashboard = () => {
   return (
     <div>
       {/* Welcome Section */}
-      <section className="bg-indigo-700 py-20 mb-4">
+      <section className="bg-orange-700 py-20 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
@@ -39,7 +39,7 @@ const EmployerDashboard = () => {
               </p>
               <Link
                 to="/add-job"
-                className="inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600"
+                className="inline-block bg-orange-500 text-white rounded-lg px-4 py-2 hover:bg-orange-600"
               >
                 Add Job
               </Link>

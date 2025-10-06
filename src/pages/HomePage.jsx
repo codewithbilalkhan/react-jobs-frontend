@@ -9,8 +9,8 @@ const HomePage = () => {
     <div>
      
       <Hero 
-        heading="Become a React Dev" 
-        tagline="Find the React job that fits your skills and needs"
+        heading="Find Your Dream Job Today" 
+        tagline="Empowering job seekers and employers to connect with ease."
       />
       <HomeCards />
       <JobListings isHome="true" />
